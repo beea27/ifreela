@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar no-border-top>
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="servicos">
+        Serviços
+      </ion-segment-button>
+      <ion-segment-button value="salvos">
+        Salvos
+      </ion-segment-button>
+      <ion-segment-button value="meus-servicos">
+        Meus Serviços
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar showCancelButton="never"></ion-searchbar>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>João</ion-card-subtitle>
+            <ion-card-title>Eletricista</ion-card-title>
+          </ion-card-header>
+          <img src="https://image.freepik.com/fotos-gratis/tecnico-tecnico-emprego_1426-1355.jpg" alt="eletricista">
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Caio</ion-card-subtitle>
+            <ion-card-title>Design</ion-card-title>
+          </ion-card-header>
+          <img src="https://images-ext-2.discordapp.net/external/1hoQ-Yrc_6V1rSfFjH_inTlRZ5t9LNVQfLJJ0YcF3v8/https/image.freepik.com/fotos-gratis/vista-superior-do-designer-grafico-trabalhando-com-tablet-grafico-e-laptop_23-2147652935.jpg" alt="design">
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Maria</ion-card-subtitle>
+            <ion-card-title>Diarista</ion-card-title>
+          </ion-card-header>
+          <img src="https://images-ext-2.discordapp.net/external/MbD2P14v_Zs5HBkZpsstCE0acfTr57rcH_kvZkPJjqc/https/image.freepik.com/fotos-gratis/meio-de-um-faxineiro-feminino-limpando-a-mesa-de-madeira-com-pano_23-2148222259.jpg" alt="diarista">
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Mateus</ion-card-subtitle>
+            <ion-card-title>Programador</ion-card-title>
+          </ion-card-header>
+          <img src="https://images-ext-1.discordapp.net/external/9wGn7WpmNykszID6VxssLHbPpzkQ4g9S9bsL59zNMSU/https/image.freepik.com/fotos-gratis/programador-trabalhando-no-computador-portatil-no-estudio-do-escritorio_90781-261.jpg" alt="programador">
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Felipe</ion-card-subtitle>
+            <ion-card-title>Fotógrofo</ion-card-title>
+          </ion-card-header>
+          <img src="https://images-ext-1.discordapp.net/external/p8dskWTdPMKLZXORaUehtkNzFYQ4YzJm3lxJVcukqD0/https/image.freepik.com/fotos-gratis/bonitao-africano-com-corte-de-cabelo-elegante-tirando-foto-na-camera-digital_171337-1345.jpg" alt="fotografo">
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>José</ion-card-subtitle>
+            <ion-card-title>Jardineiro</ion-card-title>
+          </ion-card-header>
+          <img src="https://images-ext-2.discordapp.net/external/utDpM5ysK33dxhlR3daeyVblNicOAGiMOC0Jb092g6s/https/image.freepik.com/fotos-gratis/plantas-de-corte-de-jardineiro_1426-1515.jpg" alt="Jardineiro">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
