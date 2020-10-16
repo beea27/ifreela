@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicosPage implements OnInit {
 
+  type: string;
   constructor() { }
 
   ngOnInit() {
+    this.type = 'servicos';
+  }
+
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
   }
 
 }
