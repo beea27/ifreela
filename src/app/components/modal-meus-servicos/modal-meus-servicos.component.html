@@ -1,27 +1,22 @@
 <ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <ol>
-      <li>Passing data from page to Modal</li>
-      <li>Receving data from Modal</li>
-    </ol>
-    <h5 *ngIf="dataFromModal">Data from Modal : {{ dataFromModal.data.ionic }}</h5>
-  </div>
+  <ion-card>
+
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-title class="card-titulo">Adicione um novo serviço</ion-card-title>
+    <p>
+    <ion-input placeholder="Enter Input"></ion-input>
+    <ion-card-title class="card-informacoes">Contato:</ion-card-title><ion-card-subtitle class="card-subtitle">11967992255</ion-card-subtitle>
+    <ion-card-title class="card-informacoes">Data de Nascimento:</ion-card-title><ion-card-subtitle class="card-subtitle">29/10/1998</ion-card-subtitle>
+    <ion-card-title class="card-informacoes">CPF:</ion-card-title><ion-card-subtitle class="card-subtitle">220.883.954-05</ion-card-subtitle>
+    <ion-card-title class="card-informacoes">Email:</ion-card-title><ion-card-subtitle class="card-subtitle">gabriela.ramos@gmail.com</ion-card-subtitle>
+    <ion-card-title class="card-informacoes">Senha:</ion-card-title><ion-card-subtitle class="card-subtitle">******</ion-card-subtitle>
+  </p>
+  </ion-card>
+  <ion-buttons slot="end">
+    <button ion-button icon-only color='black' (click)="closeModal()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-buttons>
 </ion-content>
 
-<ion-content>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="end">
-      <button ion-button icon-only color='black' (click)="closeModal()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Data From Page : {{ website }}</ion-label>
-    </ion-list-header>
-    <ion-item (click)="settingIonic('Ionic 5')">Ionic</ion-item>
-    <ion-item (click)="settingAngular('Angular 10')">Angular</ion-item>
-    <ion-item (click)="settingJavascript()">Javascript</ion-item>
-  </ion-list>
-</ion-content>

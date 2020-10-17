@@ -6,7 +6,7 @@ import { NavParams, ModalController } from '@ionic/angular';
   templateUrl: './modal-meus-servicos.component.html',
   styleUrls: ['./modal-meus-servicos.component.scss'],
 })
-export class ModalComponent implements OnInit {
+export class ModalMeusServicosComponent implements OnInit {
 
   @Input() website: string;
 

@@ -84,7 +84,7 @@
     <div *ngSwitchCase="'meus-servicos'">
       <div>
         <ion-fab slot="fixed" class="btn-add-servico">
-          <ion-fab-button color="light"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
+          <ion-fab-button color="light" (click)="modal_meus_servicos()"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
         </ion-fab>
       </div>
       <div>
@@ -94,7 +94,7 @@
             <ion-avatar>
               <img src="https://randomuser.me/api/portraits/women/2.jpg">
             </ion-avatar>
-            <ion-label class="nome-card">Programação Mobile</ion-label>
+            <ion-label class="nome-card">Design UI/UX</ion-label>
           </ion-item>
           <ion-card-content>
             <p>
@@ -142,14 +142,8 @@
               <ion-icon name="close-circle"></ion-icon>
             </ion-chip>
           </ion-card-content>
-
-          <ion-button (click)="modal_meus_servicos()">
-            <ion-icon name="modal"></ion-icon>
-          </ion-button>
-        </ion-card>
-        
+        </ion-card> 
       </div>
-      
     </div>
     
   </div>
