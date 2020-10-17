@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ServicosPageRoutingModule } from './servicos-routing.module';
 
 import { ServicosPage } from './servicos.page';
-import { CardComponent } from 'src/app/components/card/card.component';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { ModalComponent} from '../../components/modal/modal.component';
 
 @NgModule({
   imports: [
@@ -18,6 +18,6 @@ import { ComponentsModule } from 'src/app/components/components.module';
     ServicosPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [ServicosPage]
+  declarations: [ServicosPage,ModalComponent]
 })
 export class ServicosPageModule {}

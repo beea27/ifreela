@@ -71,6 +71,10 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+
+      <ion-button (click)="modal()">
+        <ion-icon name="modal"></ion-icon>
+      </ion-button>
     </div>
   
     <div *ngSwitchCase="'salvos'">
@@ -138,6 +142,10 @@
               <ion-icon name="close-circle"></ion-icon>
             </ion-chip>
           </ion-card-content>
+
+          <ion-button (click)="modal_meus_servicos()">
+            <ion-icon name="modal"></ion-icon>
+          </ion-button>
         </ion-card>
         
       </div>
