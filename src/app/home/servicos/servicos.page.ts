@@ -34,4 +34,16 @@ export class ServicosPage implements OnInit {
     this.dataFromModal = await modal.onWillDismiss();
   }
 
+  async modal() {
+    const modal = await this.modalController.create({
+      component: ModalComponent,
+      componentProps: { website: 'edupala.com' },
+      cssClass: 'modal-meus-servicos-modal',
+      backdropDismiss: false,
+    });
+
+    modal.present();
+    this.dataFromModal = await modal.onWillDismiss();
+  }
+
 }
