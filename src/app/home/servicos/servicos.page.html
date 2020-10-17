@@ -130,25 +130,71 @@
     </div>
   
     <div *ngSwitchCase="'meus-servicos'">
-      meus serviços
-      <ion-card>
-        <ion-item>
-          <ion-avatar>
-            <img src="https://randomuser.me/api/portraits/men/58.jpg">
-          </ion-avatar>
-          <ion-label>Felipe</ion-label>
-        </ion-item>
+      <div>
+        <ion-fab slot="fixed" class="btn-add-servico">
+          <ion-fab-button color="light"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
+        </ion-fab>
+      </div>
+      <div>
+        
+        <ion-card>
+          <ion-item>
+            <ion-avatar>
+              <img src="https://randomuser.me/api/portraits/women/2.jpg">
+            </ion-avatar>
+            <ion-label class="nome-card">Programação Mobile</ion-label>
+          </ion-item>
+          <ion-card-content>
+            <p>
+              Solicitações de contato:
+            </p>
+            <ion-chip>
+              <ion-avatar>
+                <img src="https://randomuser.me/api/portraits/men/54.jpg">
+              </ion-avatar>
+              <ion-label>Cauã Reis</ion-label>
+              <ion-icon name="close-circle"></ion-icon>
+            </ion-chip>
+            <ion-chip>
+              <ion-avatar>
+                <img src="https://randomuser.me/api/portraits/women/47.jpg">
+              </ion-avatar>
+              <ion-label>Maria Eduarda Siqueira</ion-label>
+              <ion-icon name="close-circle"></ion-icon>
+            </ion-chip>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-avatar>
+              <img src="https://randomuser.me/api/portraits/women/2.jpg">
+            </ion-avatar>
+            <ion-label class="nome-card">Programação Mobile</ion-label>
+          </ion-item>
+          <ion-card-content>
+            <p>
+              Solicitações de contato:
+            </p>
+            <ion-chip>
+              <ion-avatar>
+                <img src="https://randomuser.me/api/portraits/men/54.jpg">
+              </ion-avatar>
+              <ion-label>Cauã Reis</ion-label>
+              <ion-icon name="close-circle"></ion-icon>
+            </ion-chip>
+            <ion-chip>
+              <ion-avatar>
+                <img src="https://randomuser.me/api/portraits/women/47.jpg">
+              </ion-avatar>
+              <ion-label>Maria Eduarda Siqueira</ion-label>
+              <ion-icon name="close-circle"></ion-icon>
+            </ion-chip>
+          </ion-card-content>
+        </ion-card>
+        
+      </div>
       
-        <ion-card-content>
-          <p>
-            Serviços elétricos
-          </p>
-
-          <ion-button fill="outline" slot="end"><ion-icon name="logo-whatsapp"></ion-icon></ion-button>
-
-        </ion-card-content>
-      </ion-card>
-
     </div>
+    
   </div>
 </ion-content>
