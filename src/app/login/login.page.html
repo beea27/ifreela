@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar styles="align-items: center;">
+    <ion-row>
+      <ion-col>
+        <ion-title style="text-align: center;">
+          <img src="https://fontmeme.com/permalink/201017/058a2db221f1170c437de574795ac702.png" class="logo-home">
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="getstart">
+  <ion-row>
+    <ion-col>
+      <ion-list inset>
+        <ion-item>
+          <ion-input placeholder="e-mail" type="text" #mail></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="senha" type="password" #password></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <button ion-button class="btn-login" routerLink="/home">Login
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <button ion-button class="btn-cadastro" routerLink="/cadastro-login">Cadastre-se
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>
