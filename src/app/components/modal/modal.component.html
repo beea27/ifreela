@@ -1,13 +1,3 @@
-<ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <ol>
-      <li>Passing data from page to Modal</li>
-      <li>Receving data from Modal</li>
-    </ol>
-    <h5 *ngIf="dataFromModal">Data from Modal : {{ dataFromModal.data.ionic }}</h5>
-  </div>
-</ion-content>
-
 <ion-content>
   <ion-toolbar color="secondary">
     <ion-buttons slot="end">
@@ -16,12 +6,7 @@
       </button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Data From Page : {{ website }}</ion-label>
-    </ion-list-header>
-    <ion-item (click)="settingIonic('Ionic 5')">Ionic</ion-item>
-    <ion-item (click)="settingAngular('Angular 10')">Angular</ion-item>
-    <ion-item (click)="settingJavascript()">Javascript</ion-item>
-  </ion-list>
+
+  <app-card></app-card>
+
 </ion-content>

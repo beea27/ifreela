@@ -22,7 +22,7 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="modal()">
               <ion-card-header>
                 <ion-card-title>Eletricista</ion-card-title>
               </ion-card-header>
@@ -30,7 +30,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="modal()">
               <ion-card-header>
                 <ion-card-title>Design</ion-card-title>
               </ion-card-header>
@@ -38,7 +38,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="modal()">
               <ion-card-header>
                 <ion-card-title>Diarista</ion-card-title>
               </ion-card-header>
@@ -46,7 +46,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="modal()">
               <ion-card-header>
                 <ion-card-title>Programador</ion-card-title>
               </ion-card-header>
@@ -54,7 +54,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="modal()">
               <ion-card-header>
                 <ion-card-title>Fotógrofo</ion-card-title>
               </ion-card-header>
@@ -62,7 +62,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="modal()">
               <ion-card-header>
                 <ion-card-title>Jardineiro</ion-card-title>
               </ion-card-header>
@@ -71,10 +71,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-
-      <ion-button (click)="modal()">
-        <ion-icon name="modal"></ion-icon>
-      </ion-button>
     </div>
   
     <div *ngSwitchCase="'salvos'">
