@@ -1,12 +1,14 @@
-ion-page.page {
+/*ion-content {
+    --background: url('/src/assets/imagens/bk-login.jpg') no-repeat center/cover fixed;
+}*/
+.background{
+    background: url('/src/assets/img/bk_login.png') no-repeat;
+    background-size: cover;
+}
+//ion-content {
+  //  --background: #ffff00 url('/src/assets/img/bk-login.png') no-repeat center center / cover !important;
+//}
 
-    background-image: url('/src/assets/imagens/bk-login.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-ion-page.page > ion-content{
-    background-color: transparent;
-}
 
 .btn-login {
 font-family: Nunito;
@@ -18,11 +20,12 @@ text-align: center;
 
 color: #7706C3;
 
-position: absolute;
+position: relative;
+margin: auto;
 width: 153px;
 height: 50px;
 left: 129px;
-top: 476px;
+top: 320px;
 
 background: #41EB4D;
 border: 1px solid #000000;
@@ -30,6 +33,7 @@ box-sizing: border-box;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
+
 .btn-cadastro{
 font-family: Nunito;
 font-style: normal;
@@ -40,10 +44,12 @@ text-align: center;
 
 color: #7706C3;
 
+position: relative;
+margin: auto;
 width: 153px;
 height: 50px;
 left: 129px;
-top: 476px;
+top: 400px;
 
 background: #41EB4D;
 border: 1px solid #000000;
