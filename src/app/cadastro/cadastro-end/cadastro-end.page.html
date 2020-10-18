@@ -11,36 +11,38 @@
 </ion-header>
 
 <ion-content padding class="getstart">
+  
+  <ion-title class="titulo">Cadastro de Endereço</ion-title>
   <ion-row>
     <ion-col>
       <ion-list inset>
         <ion-item>
-          <ion-input placeholder="cep" type="text" #cep></ion-input>
+          <ion-input placeholder="cep" type="text" #cep class='input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="cidade" type="text" #cidade></ion-input>
+          <ion-input placeholder="cidade" type="text" #cidade class='input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="UF" type="text" #uf></ion-input>
+          <ion-input placeholder="UF" type="text" #uf class='input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="endereco" type="text" #endereco></ion-input>
+          <ion-input placeholder="endereco" type="text" #endereco class='input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="bairro" type="text" #bairo></ion-input>
+          <ion-input placeholder="bairro" type="text" #bairo class='input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="numero" type="text" #numero></ion-input>
+          <ion-input placeholder="numero" type="text" #numero class='input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="complemento" type="text" #complemento></ion-input>
+          <ion-input placeholder="complemento" type="text" #complemento class='input'></ion-input>
         </ion-item>
       </ion-list>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col>
-      <button ion-button class="btn-login" routerLink="/home">Salvar Endereço
+    <ion-col class='col-btn'>
+      <button ion-button class="btn-cadastrar" routerLink="/home">Salvar Endereço
       </button>
     </ion-col>
   </ion-row>

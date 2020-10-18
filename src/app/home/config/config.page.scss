@@ -1,0 +1,23 @@
+.btn-sair {
+    font-size: 24px;
+    text-align: center;
+    color: #6101a0;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 50px;
+    background: #41eb4d00;
+    border: 2px solid #6101a0;
+    box-sizing: border-box;
+    border-radius: 6px;
+  
+  }
+
+  ion-content{
+    --padding-top: 10%;
+    
+  }
+
+  div{
+    display: flex;
+  }

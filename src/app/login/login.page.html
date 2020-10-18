@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar styles="align-items: center;">
     <ion-row>
@@ -11,27 +12,29 @@
 </ion-header>
 
 <ion-content padding class="background">
+  
+  <ion-title class="titulo">Entrar</ion-title>
   <ion-row>
     <ion-col>
       <ion-list inset>
         <ion-item>
-          <ion-input placeholder="e-mail" type="text" #mail></ion-input>
+          <ion-input placeholder="e-mail" type="text" #mail class='input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="senha" type="password" #password></ion-input>
+          <ion-input placeholder="senha" type="password" #password class='input'></ion-input>
         </ion-item>
       </ion-list>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col>
-      <button ion-button class="btn-login" routerLink="/home">Login
+    <ion-col class='col-btn'>
+      <button ion-button class="btn-login" routerLink="/home" >Login
       </button>
     </ion-col>
   </ion-row>
-  <ion-row>
-    <ion-col>
-      <button ion-button class="btn-cadastro" routerLink="/cadastro-login">Cadastre-se
+  <ion-row class='row-cadastrar'>
+    <ion-col class='col-btn'>
+      <button ion-button class="btn-cadastro" routerLink="/cadastro-login" >Cadastre-se
       </button>
     </ion-col>
   </ion-row>
