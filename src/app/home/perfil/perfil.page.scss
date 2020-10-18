@@ -1,3 +1,4 @@
+
 .card-titulo{
     text-align: center;
     color: #6101a0;
@@ -13,7 +14,7 @@
 }
 
 span{
-    color: black;
+    color: rgb(116, 116, 116);
     font-weight: lighter;
 }
 
@@ -28,7 +29,8 @@ ion-avatar{
 }
 
 .btn-edit-endereco{
-    margin-top: 130%;
-    margin-left: 80%;
-    position: fixed !important;
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 25%;
 }
+

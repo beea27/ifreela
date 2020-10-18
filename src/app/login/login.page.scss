@@ -1,11 +1,8 @@
-/*ion-content {
-    --background: url('/src/assets/imagens/bk-login.jpg') no-repeat center/cover fixed;
-}*/
-.background{
-  //background: url('/src/assets/img/bk_login.png') no-repeat;
-  background-image: url('/src/assets/img/bk_login.png');
-  background-size: cover;
+ion-content{
+  --background-image: url(/src/assets/img/bk_login.png) no-repeat 100% 100%;
+  
 }
+
 //ion-content {
   //  --background: #ffff00 url('/src/assets/img/bk-login.png') no-repeat center center / cover !important;
 //}
@@ -60,4 +57,8 @@
 }
 .row-cadastrar{
   margin-top: 40%;
+}
+
+ion-item{
+  padding: 0px;
 }
