@@ -1,3 +1,6 @@
+ion-toolbar{
+  /*--background: #d6d6d6;*/
+}
 #container {
   text-align: center;
 
@@ -28,4 +31,14 @@
 
 .logo-home{
   width: 40%;
+}
+
+ion-tab-button{
+  --color-selected: #00c50e;
+}
+
+ion-tab-bar{
+  --background: #d6d6d6;
+  --color:#464646;
+
 }

@@ -1,15 +1,40 @@
-.setting-modal .modal-wrapper {
-  height: 20%;
-  top: 80%;
-  position: absolute; 
-  display: block;  
-}
-
 .card-titulo{
   text-align: center;
   font-size: 26px;
+  padding-top: 20px;
 }
 
 .input{
-  border-color: black!important
+  border: solid 1px #F0F0F0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.btn{
+  --background: #7706c3; 
+  color: #F0F0F0;
+  --border-radius: 6px!important;
+  width: 100%;
+  margin-top: 15%;
+}
+
+ion-card{
+  padding: 10px;
+  height: -webkit-fill-available;
+}
+
+.form{
+  padding-top: 15%;
+}
+
+ion-textarea{
+  height: 30%;
+}
+ion-row{
+  display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+.icon-fechar{
+  font-size: 34px;
 }

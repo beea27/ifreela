@@ -4,3 +4,11 @@
   position: absolute; 
   display: block;  
 }
+ion-row{
+  display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+.icon-fechar{
+  font-size: 34px;
+}

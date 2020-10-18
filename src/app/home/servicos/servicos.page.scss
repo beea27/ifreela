@@ -1,8 +1,37 @@
 .nome-card{
-    padding-left: 7%;
+    padding-left: 4%;
+    color: #6101a0;
+    font-size: 20px;
+  
 }
 .btn-add-servico{
-    margin-top: 140%;
+    margin-top: 130%;
     margin-left: 80%;
     position: fixed !important;
+}
+
+ion-card{
+    border: solid 1px #e0e0e0;
+    box-shadow: 0 0 black;
+    border-radius: 8px;
+}
+
+ion-card-title{
+    text-align: center;
+    color: #6101a0;
+    font-size: 20px;
+    
+}
+
+.search{
+    --border-radius: 18px!important;
+}
+
+.container-servicos{
+    margin-top: 10px;
+}
+
+ion-segment-button{
+    --color-checked: #00c50e;
+    font-weight: bold;
 }

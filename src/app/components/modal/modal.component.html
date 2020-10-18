@@ -1,11 +1,11 @@
-<ion-content>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="end">
-      <button ion-button icon-only color='black' (click)="closeModal()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
+<ion-header [translucent]="true">
+  <ion-toolbar styles="align-items: center;">
+    <ion-row>
+          <ion-icon name="close-outline" (click)="closeModal()" class='icon-fechar'></ion-icon>
+    </ion-row>
   </ion-toolbar>
+</ion-header>
+<ion-content>
 
   <app-card></app-card>
 

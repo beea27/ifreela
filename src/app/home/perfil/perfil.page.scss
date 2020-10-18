@@ -1,16 +1,28 @@
 .card-titulo{
-    font-size: 24px;
     text-align: center;
-    font-weight: bold;
+    color: #6101a0;
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 10px;
 }
 
 .card-informacoes{
     font-size: 19px; 
     font-weight: bold; 
+    padding-bottom: 5px;
 }
 
-.card-subtitle{
-    font-size: 16px;
+span{
     color: black;
+    font-weight: lighter;
 }
 
+ion-avatar{
+    width: 30%;
+    height: 30%;
+}
+.perfil{
+    padding:15px;
+    display: flex;
+    justify-content: center;
+}
