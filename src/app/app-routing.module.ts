@@ -23,8 +23,6 @@ const routes: Routes = [
     path: 'cadastro-end',
     loadChildren: () => import('./cadastro/cadastro-end/cadastro-end.module').then( m => m.CadastroEndPageModule)
   },
-
-
 ];
 
 @NgModule({
