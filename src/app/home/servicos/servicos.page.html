@@ -37,75 +37,13 @@
     </div>
   
     <div *ngSwitchCase="'meus-servicos'">
-      <div>
-        <ion-fab slot="fixed" class="btn-add-servico">
-          <ion-fab-button color="light" (click)="modal_meus_servicos()"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
-        </ion-fab>
-      </div>
-      <div>
+
+      <ion-fab slot="fixed" class="btn-add-servico">
+        <ion-fab-button color="light" (click)="modal_meus_servicos()"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
+      </ion-fab>
         
-        <ion-card>
-          <ion-item>
-            <ion-avatar>
-              <img src="https://randomuser.me/api/portraits/women/2.jpg">
-            </ion-avatar>
-            <ion-label class="nome-card">Design UI/UX</ion-label>
-          </ion-item>
-          <ion-card-content>
-            <p>
-              Solicitações de contato:
-            </p>
-            <ion-chip>
-              <ion-avatar>
-                <img src="https://randomuser.me/api/portraits/men/54.jpg">
-              </ion-avatar>
-              <ion-label>Cauã Reis</ion-label>
-              <ion-icon name="close-circle"></ion-icon>
-            </ion-chip>
-            <ion-chip>
-              <ion-avatar>
-                <img src="https://randomuser.me/api/portraits/women/47.jpg">
-              </ion-avatar>
-              <ion-label>Maria Eduarda Siqueira</ion-label>
-              <ion-icon name="close-circle"></ion-icon>
-            </ion-chip>
-          </ion-card-content>
-        </ion-card>
-        <ion-card>
-          <ion-item>
-            <ion-avatar>
-              <img src="https://randomuser.me/api/portraits/women/2.jpg">
-            </ion-avatar>
-            <ion-label class="nome-card">Programação Mobile</ion-label>
-          </ion-item>
-          <ion-card-content>
-            <p>
-              Solicitações de contato:
-            </p>
-            <ion-chip>
-              <ion-avatar>
-                <img src="https://randomuser.me/api/portraits/women/30.jpg">
-              </ion-avatar>
-              <ion-label>Maitê Santos</ion-label>
-              <ion-icon name="close-circle"></ion-icon>
-            </ion-chip>
-            <ion-chip>
-              <ion-avatar>
-                <img src="https://randomuser.me/api/portraits/men/12.jpg">
-              </ion-avatar>
-              <ion-label>Carlos Eduardo Rios</ion-label>
-              <ion-icon name="close-circle"></ion-icon>
-            </ion-chip>
-            <ion-chip>
-              <ion-avatar>
-                <img src="https://randomuser.me/api/portraits/women/9.jpg">
-              </ion-avatar>
-              <ion-label>Luana Souza</ion-label>
-              <ion-icon name="close-circle"></ion-icon>
-            </ion-chip>
-          </ion-card-content>
-        </ion-card> 
-      </div>
+      <app-card-meus-servicos
+      ></app-card-meus-servicos>
     </div>
     
   </div>
