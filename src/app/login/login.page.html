@@ -1,41 +1,60 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
 
-<ion-header>
-  <ion-toolbar styles="align-items: center;">
+<ion-content class="background-image">
+
+  <div class="login-logo animated infinite pulse slower">
+    <img src="https://fontmeme.com/permalink/201017/058a2db221f1170c437de574795ac702.png" alt="Ionic logo">
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked" color="primary">Email</ion-label>
+        <ion-input formControlName="email" name="email" type="text" spellcheck="false" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="submitted == false" class="ion-padding-start">
+          {{this.loginError}}
+        </p>  -->
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Senha</ion-label>
+        <ion-input formControlName="password" name="password" type="password" [type]="passwordType" clearOnEdit="false"
+          required>
+        </ion-input>
+        <ion-icon [name]="passwordIcon" slot="end" (click)='hideShowPassword()' style="margin: auto;"></ion-icon>
+      </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="submitted == false" class="ion-padding-start">
+          {{this.loginError}}
+        </p>
+      </ion-text>
+    </ion-list>
+
+    <ion-item class="bg-transparent">
+      <ion-label style="font-size: 17px; font-weight: bold; " class="bg-transparent">Lembra senha
+      </ion-label>
+      <ion-checkbox color="light" slot="start" formControlName="lastpassword" name="lastpassword"></ion-checkbox>
+    </ion-item>
+
     <ion-row>
       <ion-col>
-        <ion-title style="text-align: center;">
-          <img src="https://fontmeme.com/permalink/201017/058a2db221f1170c437de574795ac702.png" class="logo-home">
-        </ion-title>
+        <ion-button class="btn-grad animated bounceInLeft fast" [disabled]="!loginForm.valid" type="submit"
+          expand="block">Entrar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="btn-grad-orange animated bounceInRight fast" [disabled]="!loginForm.valid"
+          (click)="onSignup()" expand="block">Registrar</ion-button>
       </ion-col>
     </ion-row>
-  </ion-toolbar>
-</ion-header>
+  </form>
 
-<ion-content padding class="background">
-  
-  <ion-title class="titulo">Entrar</ion-title>
-  <ion-row>
-    <ion-col>
-      <ion-list inset>
-        <ion-item>
-          <ion-input placeholder="e-mail" type="text" #mail class='input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="senha" type="password" #password class='input'></ion-input>
-        </ion-item>
-      </ion-list>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col class='col-btn'>
-      <button ion-button class="btn-login" routerLink="/home" >Login
-      </button>
-    </ion-col>
-  </ion-row>
-  <ion-row class='row-cadastrar'>
-    <ion-col class='col-btn'>
-      <button ion-button class="btn-cadastro" routerLink="/cadastro-login" >Cadastre-se
-      </button>
-    </ion-col>
-  </ion-row>
 </ion-content>
