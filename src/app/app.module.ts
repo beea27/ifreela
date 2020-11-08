@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {firebaseConfig} from './firebaseConfig';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 
 
@@ -31,7 +32,8 @@ import {firebaseConfig} from './firebaseConfig';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AngularFireAuth
+    AngularFireAuth,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })
