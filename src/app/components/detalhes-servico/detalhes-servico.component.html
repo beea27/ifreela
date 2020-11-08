@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar styles="align-items: center;">
+    <ion-row>
+          <ion-icon name="close-outline" (click)="closeModal()" class='icon-fechar'></ion-icon>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-title class="card-titulo">Serviço</ion-card-title>
+    <div class="form">
+      <p>
+      <ion-input type='text' class='input'>{{servico.categoria}}</ion-input>
+      <ion-input type='text' class='input'>{{servico.nome}}</ion-input>
+      <ion-input type='tel' class='input'>{{servico.contato}}</ion-input>
+      <ion-textarea type='text' class='input' rows='20'>{{servico.descricao}}</ion-textarea>
+    
+      <ion-button (click)="closeModal()" class="btn">Salvar alterações</ion-button>
+      </p>
+  </div>
+  </ion-card>
+</ion-content>
+
