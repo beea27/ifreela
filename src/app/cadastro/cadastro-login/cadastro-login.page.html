@@ -12,31 +12,58 @@
 
 <ion-content padding class="getstart">
   <ion-title class="titulo">Cadastro</ion-title>
-  <ion-row>
-    <ion-col>
-      <ion-list inset>
-        <ion-item>
-          <ion-input placeholder="nome" type="text" #nome class='input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="data de nascimento" type="data" #data class='input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="cpf" type="text" #cpf class='input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="e-mail" type="text" #mail class='input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="senha" type="password" #password class='input'></ion-input>
-        </ion-item>
-      </ion-list>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col class='col-btn'>
-      <button ion-button class="btn-cadastrar" routerLink="/cadastro-end">Cadastre-se
-      </button>
-    </ion-col>
-  </ion-row>
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSignup()">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-item>
+            <ion-input placeholder="nome" type="text" #nome class='input' formControlName="nome"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="data de nascimento" type="data" #data class='input' formControlName="dt_nasc"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="cpf" type="text" #cpf class='input' formControlName="cpf"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="e-mail" type="text" #mail class='input' formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="password" placeholder="senha" class='input' name="password" type="password" [type]="passwordType" clearOnEdit="false"
+              required>
+            </ion-input>
+            <ion-icon [name]="passwordIcon" slot="end" (click)='hideShowPassword()' style="margin: 10px; color: #000;"></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <ion-input placeholder="cep" type="text" #cep class='input' formControlName="cep"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="cidade" type="text" #cidade class='input' formControlName="cidade"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="UF" type="text" #uf class='input' formControlName="uf"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="endereco" type="text" #endereco class='input' formControlName="endereco"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="bairro" type="text" #bairo class='input' formControlName="bairro"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="numero" type="text" #numero class='input' formControlName="numero"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="complemento" type="text" #complemento class='input' formControlName="complemento"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class='col-btn'>
+        <button class="btn-cadastrar" type="submit" expand="block">Cadastrar</button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
