@@ -11,11 +11,11 @@
   </div>
 
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="color-bg">
     <ion-list>
+     
       <ion-item>
-        <ion-label position="stacked" color="primary">Email</ion-label>
-        <ion-input formControlName="email" name="email" type="text" spellcheck="false" autocapitalize="off" required>
-        </ion-input>
+        <ion-input placeholder="e-mail" type="text"  formControlName="email" class='input input-interactive' spellcheck="false" autocapitalize="off" required></ion-input>
       </ion-item>
 
       <ion-text color="danger">
@@ -25,11 +25,11 @@
       </ion-text>
 
       <ion-item>
-        <ion-label position="stacked" color="primary">Senha</ion-label>
-        <ion-input formControlName="password" name="password" type="password" [type]="passwordType" clearOnEdit="false"
+       
+        <ion-input formControlName="password" placeholder="senha" class='input' name="password" type="password" [type]="passwordType" clearOnEdit="false"
           required>
         </ion-input>
-        <ion-icon [name]="passwordIcon" slot="end" (click)='hideShowPassword()' style="margin: auto;"></ion-icon>
+        <ion-icon [name]="passwordIcon" slot="end" (click)='hideShowPassword()' style="margin: 10px; color: #fff;"></ion-icon>
       </ion-item>
 
       <ion-text color="danger">
@@ -39,19 +39,19 @@
       </ion-text>
     </ion-list>
 
-    <ion-item class="bg-transparent">
-      <ion-label style="font-size: 17px; font-weight: bold; " class="bg-transparent">Lembra senha
+    <ion-item class="lembrar-senha">
+      <ion-label style="font-size: 17px; color:#fff; font-weight: bold;">Lembra senha
       </ion-label>
       <ion-checkbox color="light" slot="start" formControlName="lastpassword" name="lastpassword"></ion-checkbox>
     </ion-item>
-
-    <ion-row>
+    </div>
+    <ion-row class="btns">
       <ion-col>
-        <ion-button class="btn-grad animated bounceInLeft fast" [disabled]="!loginForm.valid" type="submit"
+        <ion-button class="btn-login" [disabled]="!loginForm.valid" type="submit"
           expand="block">Entrar</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="btn-grad-orange animated bounceInRight fast" [disabled]="!loginForm.valid"
+        <ion-button class="btn-cadastro" [disabled]="!loginForm.valid"
           (click)="onSignup()" expand="block">Registrar</ion-button>
       </ion-col>
     </ion-row>
