@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import {AngularFirestore} from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import AuthProvider = firebase.auth.AuthProvider;
+import { Users } from '../interfaces/users';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +12,29 @@ import AuthProvider = firebase.auth.AuthProvider;
 export class AuthService {
 
   private user: firebase.User;
+  private usersCollection: AngularFirestoreCollection<Users>;
 
   constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
     afAuth.authState.subscribe(user => {
       this.user = user;
     });
+  }
+
+  getDados() {
+    //return this.usersCollection.doc<Users>(this.user.uid).valueChanges();
+    let user = this.afAuth.auth.currentUser;
+    const uid = user.uid;
+
+    return this.afs.collection<Users>('Users', ref => ref.where('uid', '==', user.uid)).snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+
+          return { id, ...data };
+        });
+      })
+    )
   }
 
   signInWithEmail(credentials) {
@@ -24,21 +44,22 @@ export class AuthService {
   }
 
   async signUp(credentials) {
-    try{
+    try {
       const newUser = await this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
+      credentials.uid = newUser.user.uid;
       const newUserObject = Object.assign({}, credentials);
-      
-      delete newUserObject.email;
+
+      //delete newUserObject.email;
       delete newUserObject.password;
 
-      await this.afs.collection('Users').doc(newUser.user.uid).set(credentials);
+      await this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
       return console.log('Cadastro efetuado com sucesso!');
-    }catch(error){
+    } catch (error) {
       return console.error(error);
     }
   }
 
-  
+
 
   get authenticated(): boolean {
     return this.user !== null;

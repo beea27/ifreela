@@ -8,13 +8,13 @@
   </div>
 
   <ion-card>
-    <ion-card-header>
+    <ion-card-header *ngFor="let users of users">
       <ion-card-title class="card-titulo">Meus dados</ion-card-title>
-        <ion-card-title class="card-informacoes">Nome:<span> Gabriela Ramos</span></ion-card-title>
+        <ion-card-title class="card-informacoes">Nome:<span> {{users.nome}}</span></ion-card-title>
         <ion-card-title class="card-informacoes">Contato:<span> 11967992255</span></ion-card-title>
-        <ion-card-title class="card-informacoes">Data de Nascimento:<span> 29/10/1998</span></ion-card-title>
-        <ion-card-title class="card-informacoes">CPF:<span>220.883.954-05</span></ion-card-title>
-        <ion-card-title class="card-informacoes">Email:<span> gabriela.ramos@gmail.com</span></ion-card-title>
+        <ion-card-title class="card-informacoes">Data de Nascimento:<span> {{users.dt_nasc}}</span></ion-card-title>
+        <ion-card-title class="card-informacoes">CPF:<span>{{users.cpf}}</span></ion-card-title>
+        <ion-card-title class="card-informacoes">Email:<span>{{users.email}}</span></ion-card-title>
         <ion-card-title class="card-informacoes">Senha:<span> ******</span></ion-card-title>
     </ion-card-header>
   </ion-card>
@@ -23,14 +23,14 @@
     <ion-card-header>
       <ion-card-title class="card-titulo">Endereço</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content *ngFor="let users of users">
       <ion-fab  class="btn-edit-endereco" ><ion-fab-button color="light" routerLink="/cadastro-end"><ion-icon name="create-outline"></ion-icon></ion-fab-button></ion-fab>
-      <ion-card-title class="card-informacoes">CEP: <span> 02805000</span></ion-card-title>
-      <ion-card-title class="card-informacoes">Cidade:<span> São Paulo</span></ion-card-title>
-      <ion-card-title class="card-informacoes">Endereço:<span> Rua São João</span></ion-card-title>
-      <ion-card-title class="card-informacoes">Bairro:<span> Campos Eliseos</span></ion-card-title>
-      <ion-card-title class="card-informacoes">Numero:<span> 845</span></ion-card-title>
-      <ion-card-title class="card-informacoes">Complemento:<span> 56</span></ion-card-title>
+      <ion-card-title class="card-informacoes">CEP: <span> {{users.cep}}</span></ion-card-title>
+      <ion-card-title class="card-informacoes">Cidade:<span> {{users.cidade}}</span></ion-card-title>
+      <ion-card-title class="card-informacoes">Endereço:<span> {{users.endereco}}</span></ion-card-title>
+      <ion-card-title class="card-informacoes">Bairro:<span> {{users.bairro}}</span></ion-card-title>
+      <ion-card-title class="card-informacoes">Numero:<span> {{users.numero}}</span></ion-card-title>
+      <ion-card-title class="card-informacoes">Complemento:<span> {{users.complemento}}</span></ion-card-title>
       
     </ion-card-content>
   </ion-card>

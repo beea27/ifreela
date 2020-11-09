@@ -51,10 +51,11 @@ export class CadastroLoginPage implements OnInit {
 
     if (this.cadastroForm.valid) {
       let credentials = {
+        uid: '',
         email: data.email,
         password: data.password,
         nome: data.nome,
-        dt_nasc:data.dt_nasc,
+        dt_nasc: data.dt_nasc,
         cpf: data.cpf,
         cep: data.cep,
         cidade: data.cidade,
