@@ -28,15 +28,15 @@ export class AppComponent {
       this.splashScreen.hide();
     });
 
-    this.auth.afAuth.authState.subscribe(
-      user => {
-        if(user){
-          this.router.navigateByUrl('/home')
-        }else{
-          this.router.navigateByUrl('/login')
-        }
-      }
-    )
+    // this.auth.afAuth.authState.subscribe(
+    //   user => {
+    //     if(user){
+    //       this.router.navigateByUrl('/home')
+    //     }else{
+    //       this.router.navigateByUrl('/login')
+    //     }
+    //   }
+    // )
 
   }
 }

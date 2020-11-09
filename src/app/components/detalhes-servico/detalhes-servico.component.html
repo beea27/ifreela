@@ -8,16 +8,14 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-title class="card-titulo">Serviço</ion-card-title>
-    <div class="form">
-      <p>
-      <ion-input type='text' class='input'>{{servico.categoria}}</ion-input>
-      <ion-input type='text' class='input'>{{servico.nome}}</ion-input>
-      <ion-input type='tel' class='input'>{{servico.contato}}</ion-input>
-      <ion-textarea type='text' class='input' rows='20'>{{servico.descricao}}</ion-textarea>
+    <form [formGroup]="editaServicoForm" (ngSubmit)="formSalvar()" class="form">
+      <ion-input [(ngModel)]="servico.categoria" formControlName="categoria" type='text' class='input'></ion-input>
+      <ion-input [(ngModel)]="servico.nome" formControlName="nome" type='text' class='input'></ion-input>
+      <ion-input [(ngModel)]="servico.contato" formControlName="contato"type='tel' class='input'></ion-input>
+      <ion-textarea [(ngModel)]="servico.descricao" formControlName="descricao" type='text' class='input' rows='20'></ion-textarea>
     
-      <ion-button (click)="closeModal()" class="btn">Salvar alterações</ion-button>
-      </p>
-  </div>
+      <ion-button (click)="closeModal()" type = "submit" class="btn">Salvar alterações</ion-button>
+    </form>
   </ion-card>
 </ion-content>
 
