@@ -12,12 +12,13 @@ import { map } from 'rxjs/operators'
 export class AuthService {
 
   private user: firebase.User;
-  private usersCollection: AngularFirestoreCollection<Users>;
+  //private usersCollection: AngularFirestoreCollection<Users>;
 
   constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
     afAuth.authState.subscribe(user => {
       this.user = user;
     });
+    //this.usersCollection = this.afs.collection<Users>('Users');
   }
 
   getDados() {

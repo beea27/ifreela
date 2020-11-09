@@ -16,7 +16,6 @@ export class PerfilPage implements OnInit {
     this.userSubscription = this.authService.getDados().subscribe(data => {
       this.users = data;
     });
-    //this.users = this.authService.getDados();
   }
 
   ngOnInit() {
