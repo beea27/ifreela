@@ -11,48 +11,48 @@
   </div>
 
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <div class="color-bg">
-    <ion-list>
-     
-      <ion-item>
-        <ion-input placeholder="e-mail" type="text"  formControlName="email" class='input input-interactive' spellcheck="false" autocapitalize="off" required></ion-input>
+    <div class="caixa-bg">
+      <ion-title>Login</ion-title>
+      <ion-list>
+      
+        <ion-item>
+          <ion-input placeholder="e-mail" type="text"  formControlName="email" class='input' spellcheck="false" autocapitalize="off" required></ion-input>
+        </ion-item>
+
+        <ion-text color="danger">
+          <!-- <p [hidden]="submitted == false" class="ion-padding-start">
+            {{this.loginError}}
+          </p>  -->
+        </ion-text>
+
+        <ion-item>
+          <ion-input formControlName="password" placeholder="senha" class='input' name="password" type="password" [type]="passwordType" clearOnEdit="false"
+            required>
+          </ion-input>
+          <ion-icon [name]="passwordIcon" slot="end" (click)='hideShowPassword()' style="margin: 10px; color: #fff;"></ion-icon>
+        </ion-item>
+
+        <ion-text color="danger">
+          <p [hidden]="submitted == false" class="ion-padding-start">
+            {{this.loginError}}
+          </p>
+        </ion-text>
+      </ion-list>
+
+      <ion-item class="lembrar-senha">
+        <ion-label style="font-size: 17px; color:#fff; font-weight: bold;">Lembra senha
+        </ion-label>
+        <ion-checkbox color="light" slot="start" formControlName="lastpassword" name="lastpassword"></ion-checkbox>
       </ion-item>
-
-      <ion-text color="danger">
-        <!-- <p [hidden]="submitted == false" class="ion-padding-start">
-          {{this.loginError}}
-        </p>  -->
-      </ion-text>
-
-      <ion-item>
-       
-        <ion-input formControlName="password" placeholder="senha" class='input' name="password" type="password" [type]="passwordType" clearOnEdit="false"
-          required>
-        </ion-input>
-        <ion-icon [name]="passwordIcon" slot="end" (click)='hideShowPassword()' style="margin: 10px; color: #fff;"></ion-icon>
-      </ion-item>
-
-      <ion-text color="danger">
-        <p [hidden]="submitted == false" class="ion-padding-start">
-          {{this.loginError}}
-        </p>
-      </ion-text>
-    </ion-list>
-
-    <ion-item class="lembrar-senha">
-      <ion-label style="font-size: 17px; color:#fff; font-weight: bold;">Lembra senha
-      </ion-label>
-      <ion-checkbox color="light" slot="start" formControlName="lastpassword" name="lastpassword"></ion-checkbox>
-    </ion-item>
-    </div>
-    <ion-row class="btns">
       <ion-col>
         <ion-button class="btn-login" [disabled]="!loginForm.valid" type="submit"
           expand="block">Entrar</ion-button>
       </ion-col>
+    </div>
+
+    <ion-row class="btns">  
       <ion-col>
-        <ion-button class="btn-cadastro" [disabled]="!loginForm.valid"
-          (click)="onSignup()" expand="block">Registrar</ion-button>
+        <ion-button class="btn-cadastro" routerLink="/cadastro-login" expand="block">Cadastre-se</ion-button>
       </ion-col>
     </ion-row>
   </form>

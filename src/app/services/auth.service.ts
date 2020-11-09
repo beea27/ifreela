@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import {AngularFirestore} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import AuthProvider = firebase.auth.AuthProvider;
 
@@ -10,7 +11,7 @@ export class AuthService {
 
   private user: firebase.User;
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
     afAuth.authState.subscribe(user => {
       this.user = user;
     });
@@ -22,9 +23,22 @@ export class AuthService {
       credentials.password);
   }
 
-  signUp(credentials) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
+  async signUp(credentials) {
+    try{
+      const newUser = await this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
+      const newUserObject = Object.assign({}, credentials);
+      
+      delete newUserObject.email;
+      delete newUserObject.password;
+
+      await this.afs.collection('Users').doc(newUser.user.uid).set(credentials);
+      return console.log('Cadastro efetuado com sucesso!');
+    }catch(error){
+      return console.error(error);
+    }
   }
+
+  
 
   get authenticated(): boolean {
     return this.user !== null;
