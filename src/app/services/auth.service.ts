@@ -15,9 +15,9 @@ export class AuthService {
   //private usersCollection: AngularFirestoreCollection<Users>;
 
   constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
-    afAuth.authState.subscribe(user => {
-      this.user = user;
-    });
+    // afAuth.authState.subscribe(user => {
+    //   this.user = user;
+    // });
     //this.usersCollection = this.afs.collection<Users>('Users');
   }
 
