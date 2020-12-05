@@ -1,5 +1,7 @@
 {
   "name": "ifreela",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
