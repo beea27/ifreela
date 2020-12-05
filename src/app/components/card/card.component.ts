@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Platform } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-card',
@@ -8,6 +9,9 @@ import { Platform } from '@ionic/angular';
 })
 
 export class CardComponent implements OnInit {
+  @Input() like: boolean;
+
+  @Output() likeChange = new EventEmitter<boolean>();
 
   constructor(public platform: Platform) {}
 
@@ -19,7 +23,5 @@ export class CardComponent implements OnInit {
     });
   }
 
-
   ngOnInit() {}
-
 }

@@ -4,6 +4,11 @@
       <img src="https://randomuser.me/api/portraits/men/37.jpg">
     </ion-avatar>
     <ion-label>Mateus da Silva</ion-label>
+    <ion-col size="auto">
+      <ion-button fill="clear" (click)="likeChange.emit(!like)">
+        <ion-icon slot="icon-only" [name]="'heart'+(like ? '' : '-outline')"></ion-icon>
+      </ion-button>
+    </ion-col>
   </ion-item>
 
   <ion-card-content>
