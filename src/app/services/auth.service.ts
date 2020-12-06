@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import '@firebase/firestore'
 import { map } from 'rxjs/operators';
 import { Users } from '../interfaces/users';
 import AuthProvider = firebase.auth.AuthProvider;
