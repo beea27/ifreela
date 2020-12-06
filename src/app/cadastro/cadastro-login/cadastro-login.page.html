@@ -17,44 +17,44 @@
       <ion-col>
         <ion-list inset>
           <ion-item>
-            <ion-input placeholder="nome" type="text" #nome class='input' formControlName="nome"></ion-input>
+            <ion-input placeholder="Nome" type="text" #nome class='input' formControlName="nome"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="data de nascimento" type="data" #data class='input' formControlName="dt_nasc"></ion-input>
+            <ion-input placeholder="Data de Nascimento" type="date" #data class='input' formControlName="dt_nasc"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="cpf" type="text" #cpf class='input' formControlName="cpf"></ion-input>
+            <ion-input placeholder="CPF" type="text" #cpf class='input' formControlName="cpf" [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}" ></ion-input>
+          </ion-item> 
+          <ion-item>
+            <ion-input placeholder="E-mail" type="text" #mail class='input' formControlName="email"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="e-mail" type="text" #mail class='input' formControlName="email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input formControlName="password" placeholder="senha" class='input' name="password" type="password" [type]="passwordType" clearOnEdit="false"
+            <ion-input formControlName="password" placeholder="Senha" class='input' name="password" type="password" [type]="passwordType" clearOnEdit="false"
               required>
             </ion-input>
             <ion-icon [name]="passwordIcon" slot="end" (click)='hideShowPassword()' style="margin: 10px; color: #000;"></ion-icon>
           </ion-item>
 
           <ion-item>
-            <ion-input placeholder="cep" type="text" #cep class='input' formControlName="cep"></ion-input>
+            <ion-input placeholder="CEP" type="text" #cep class='input' formControlName="cep" [brmasker]="{mask:'00000-000', len:9, type:'num'}" ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="cidade" type="text" #cidade class='input' formControlName="cidade"></ion-input>
+            <ion-input placeholder="Cidade" type="text" #cidade class='input' formControlName="cidade"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="UF" type="text" #uf class='input' formControlName="uf"></ion-input>
+            <ion-input placeholder="UF" maxlength="2" type="text" #uf class='input' formControlName="uf"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="endereco" type="text" #endereco class='input' formControlName="endereco"></ion-input>
+            <ion-input placeholder="Endereço" type="text" #endereco class='input' formControlName="endereco"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="bairro" type="text" #bairo class='input' formControlName="bairro"></ion-input>
+            <ion-input placeholder="Bairro" type="text" #bairo class='input' formControlName="bairro"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="numero" type="text" #numero class='input' formControlName="numero"></ion-input>
+            <ion-input placeholder="Número" type="text" #numero class='input' formControlName="numero"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="complemento" type="text" #complemento class='input' formControlName="complemento"></ion-input>
+            <ion-input placeholder="Complemento" type="text" #complemento class='input' formControlName="complemento"></ion-input>
           </ion-item>
 
         </ion-list>

@@ -4,6 +4,7 @@ import { NgForm, FormBuilder, Validators, FormGroup} from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 
 
+
 @Component({
   selector: 'app-cadastro-login',
   templateUrl: './cadastro-login.page.html',
@@ -23,18 +24,18 @@ export class CadastroLoginPage implements OnInit {
     let cadastro = { nome:'', dt_nasc:'', cpf:'', email: '', password: '', cep:'', cidade:'', uf:'', endereco:'', bairro:'', numero:'', complemento:''};
    
     this.cadastroForm = fb.group({
-      email: [cadastro.email, Validators.compose([Validators.required, Validators.email])],
+      email: [cadastro.email, Validators.compose([Validators.maxLength(70),Validators.required, Validators.email, Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')])],
       password: [cadastro.password, Validators.compose([Validators.required, Validators.minLength(6)])],
-      nome: [cadastro.nome],
-      dt_nasc: [cadastro.dt_nasc],
+      nome: [cadastro.nome, Validators.compose([Validators.required, Validators.minLength(4)])],
+      dt_nasc: [cadastro.dt_nasc, Validators.compose([Validators.required])],
       cpf: [cadastro.cpf],
       cep: [cadastro.cep],
-      cidade: [cadastro.cidade],
-      uf: [cadastro.uf],
-      endereco: [cadastro.endereco],
-      bairro: [cadastro.bairro],
-      numero: [cadastro.numero],
-      complemento: [cadastro.complemento]
+      cidade: [cadastro.cidade, Validators.compose([Validators.required, Validators.minLength(4)])],
+      uf: [cadastro.uf, Validators.compose([Validators.required])],
+      endereco: [cadastro.endereco, Validators.compose([Validators.required, Validators.minLength(4)])],
+      bairro: [cadastro.bairro, Validators.compose([Validators.required, Validators.minLength(4)])],
+      numero: [cadastro.numero, Validators.compose([Validators.required])],
+      complemento: [cadastro.complemento, Validators.compose([Validators.required, Validators.minLength(4)])]
 
     });
   }
