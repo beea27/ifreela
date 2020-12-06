@@ -1,36 +1,29 @@
 import { NgModule } from '@angular/core';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms'
-
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
-import { AppComponent } from './app.component';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { BrMaskDirective, BrMaskerModule } from 'br-mask';
 import { AppRoutingModule } from './app-routing.module';
-
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {firebaseConfig} from './firebaseConfig';
-import {AngularFirestore} from '@angular/fire/firestore';
-
-import { BrMaskerModule, BrMaskDirective } from 'br-mask';
-
-
-
-
+import { AppComponent } from './app.component';
+import { firebaseConfig } from './firebaseConfig';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
+    BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig.fire),
-    BrMaskerModule
+    AngularFirestoreModule,
+    BrMaskerModule,
   ],
   providers: [
     StatusBar,
@@ -42,4 +35,4 @@ import { BrMaskerModule, BrMaskDirective } from 'br-mask';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,11 +1,9 @@
 import { Component, Input, NgZone, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Subscription } from 'rxjs';
+import * as _ from 'lodash';
 import { Users } from 'src/app/interfaces/users';
 import { ServicoModel } from './../../interfaces/users';
 import { AuthService } from './../../services/auth.service';
-import * as _ from 'lodash';
-import { serialize } from 'v8';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
