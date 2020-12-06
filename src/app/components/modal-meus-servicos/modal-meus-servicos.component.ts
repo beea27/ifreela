@@ -28,6 +28,9 @@ export class ModalMeusServicosComponent implements OnInit {
       descricao: [cadastroServico.descricao]
     });
     this.auth.getDados().subscribe(result => {
+      if (this.user) {
+        return;
+      }
       this.user = result[0];
     })
   }
@@ -42,7 +45,9 @@ export class ModalMeusServicosComponent implements OnInit {
         categoria: data.categoria,
         nome: data.nome,
         contato: data.contato,
-        descricao: data.descricao
+        descricao: data.descricao,
+        nomePrestador: this.user.nome,
+        like: false
       };
       if (!this.user.servicos) {
         this.user.servicos = [];

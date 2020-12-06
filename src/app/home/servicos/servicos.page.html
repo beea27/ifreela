@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>        
+    <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
       <ion-segment-button value="servicos">
         Serviços
       </ion-segment-button>
       <ion-segment-button value="salvos">
-        Salvos
+        Favoritos
       </ion-segment-button>
       <ion-segment-button value="meus-servicos">
         Meus Serviços
@@ -17,39 +17,36 @@
 <ion-content>
   <div [ngSwitch]="type">
     <div *ngSwitchCase="'servicos'" class="container-servicos">
-      <ion-searchbar (ionInput)= "filterArray($event)" showCancelButton="never" class="search"></ion-searchbar>
-      <ion-grid > 
+      <ion-searchbar (ionInput)="filterArray($event)" showCancelButton="never" class="search"></ion-searchbar>
+      <ion-grid>
         <ion-row>
-          <ion-col  *ngFor="let item of arr">
-            <ion-card (click)="modal()">
-            
+          <ion-col *ngFor="let item of arr">
+            <ion-card (click)="modal(item.name)">
+
               <ion-card-header>
                 <ion-card-title>{{item.name}}</ion-card-title>
               </ion-card-header>
-              <img src = {{item.foto}} alt="eletricista">
+              <img src={{item.foto}} alt="eletricista">
             </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
     </div>
-  
+
     <div *ngSwitchCase="'salvos'">
       <app-card></app-card>
     </div>
-  
+
     <div *ngSwitchCase="'meus-servicos'">
 
       <ion-fab slot="fixed" class="btn-add-servico">
-        <ion-fab-button 
-          color="light" 
-          (click)="modal_meus_servicos()"
-        >
+        <ion-fab-button color="light" (click)="modal_meus_servicos()">
           <ion-icon name="add-outline"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      
+
       <app-card-meus-servicos></app-card-meus-servicos>
     </div>
-    
+
   </div>
 </ion-content>

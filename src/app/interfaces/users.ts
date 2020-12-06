@@ -13,10 +13,13 @@ export interface Users {
     numero: number;
     complemento: string
     servicos: ServicoModel[];
+    favoritos: ServicoModel[];
 }
 export interface ServicoModel {
     categoria: string;
     nome: string;
     contato: string;
     descricao: string;
+    nomePrestador: string;
+    like: boolean;
 }
