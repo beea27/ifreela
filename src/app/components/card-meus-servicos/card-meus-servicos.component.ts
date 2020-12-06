@@ -13,6 +13,11 @@ export class CardMeusServicosComponent implements OnInit {
   dataFromModal: any;
   user: Users;
   servicos: ServicoModel[];
+  // public servicos: ServicoModel[] = [
+  //   {categoria: 'UX/UI', nome: 'interface UX/UI', contato: '99999999', descricao: 'interdaces de sites, e-commerce, landing page'},
+  //   {categoria: 'Desenvolvimento Web', nome: 'desenvolvimento web', contato: '99999999', descricao: 'desenvolvimento de sites, e-commerce, landing page'},
+  //   {categoria: 'Aulas Online', nome: 'Aula de inglês', contato: '99999999', descricao: 'aulas de conversação e gramática'},
+  // ]
   constructor(
     private modalController: ModalController,
     public auth: AuthService
@@ -36,15 +41,10 @@ export class CardMeusServicosComponent implements OnInit {
   ngOnInit(): void {
     this.auth.getDados().subscribe(result => {
       this.user = result[0];
-      if (this.user.servicos) {
-        this.servicos = this.user.servicos;
-      } else {
-        this.servicos = [
-          { categoria: 'UX/UI', nome: 'interface UX/UI', contato: '99999999', descricao: 'interdaces de sites, e-commerce, landing page' },
-          { categoria: 'Desenvolvimento Web', nome: 'desenvolvimento web', contato: '99999999', descricao: 'desenvolvimento de sites, e-commerce, landing page' },
-          { categoria: 'Aulas Online', nome: 'Aula de inglês', contato: '99999999', descricao: 'aulas de conversação e gramática' },
-        ]
+      if (!this.user.servicos) {
+        this.user.servicos = [];
       }
+      this.servicos = this.user.servicos;
     })
   }
 
