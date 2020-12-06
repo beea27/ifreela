@@ -1,7 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Platform } from '@ionic/angular';
-
-
+import * as _ from 'lodash';
+import { Users } from 'src/app/interfaces/users';
+import { AuthService } from 'src/app/services/auth.service';
+import { ServicoModel } from './../../interfaces/users';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -9,11 +11,10 @@ import { Platform } from '@ionic/angular';
 })
 
 export class CardComponent implements OnInit {
-  @Input() like: boolean;
-
   @Output() likeChange = new EventEmitter<boolean>();
-
-  constructor(public platform: Platform) {}
+  @Input() user: Users;
+  @Input() servicos: ServicoModel[];
+  constructor(public platform: Platform, private auth: AuthService) { }
 
   chat() {
     var whats;
@@ -23,5 +24,29 @@ export class CardComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  favoritar(servico: ServicoModel) {
+    if (!this.user.favoritos) {
+      this.user.favoritos = [];
+    }
+    if (servico.like) {
+      _.remove(this.user.favoritos, {
+        nome: servico.nome
+      });
+    } else {
+      this.user.favoritos.push(servico);
+    }
+    servico.like = !servico.like;
+    this.auth.updateUser(this.user);
+  }
+
+  ngOnInit() {
+    this.auth.getDados().subscribe(result => {
+      if (!this.user) {
+        this.user = result[0];
+      }
+      if (!this.servicos) {
+        this.servicos = this.user.favoritos;
+      }
+    });
+  }
 }

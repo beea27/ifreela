@@ -1,12 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar styles="align-items: center;">
     <ion-row>
-          <ion-icon name="close-outline" (click)="closeModal()" class='icon-fechar'></ion-icon>
+      <ion-icon name="close-outline" (click)="closeModal()" class='icon-fechar'></ion-icon>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
-  <app-card [(like)]="like"></app-card>
-
+  <app-card [user]="user" [servicos]="servicos"></app-card>
 </ion-content>
