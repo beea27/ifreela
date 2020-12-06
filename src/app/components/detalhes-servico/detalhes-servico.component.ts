@@ -1,8 +1,9 @@
-import { AuthService } from 'src/app/services/auth.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController, NavParams } from '@ionic/angular';
 import { Users } from 'src/app/interfaces/users';
+import { AuthService } from 'src/app/services/auth.service';
+import { ServicoModel } from './../../interfaces/users';
 
 @Component({
   selector: 'app-detalhes-servico',
@@ -12,6 +13,7 @@ import { Users } from 'src/app/interfaces/users';
 export class DetalhesServicoComponent implements OnInit {
   submitted = false;
   editaServicoForm: FormGroup;
+  servico: ServicoModel;
   @Input() user: Users;
 
   constructor(private navParams: NavParams, private modalController: ModalController, fb: FormBuilder, public auth: AuthService) {

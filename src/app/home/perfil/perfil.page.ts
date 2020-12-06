@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-  private users = new Array<Users>();
+  users = new Array<Users>();
   private userSubscription: Subscription;
 
   constructor(private authService: AuthService) {
