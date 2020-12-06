@@ -1,38 +1,29 @@
-import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { DetalhesServicoComponent} from '../../components/detalhes-servico/detalhes-servico.component';
-
-export interface Servico {
-  categoria: string;
-  nome: string;
-  contato: string;
-  descricao: string;
-}
-
+import { Users } from 'src/app/interfaces/users';
+import { DetalhesServicoComponent } from '../../components/detalhes-servico/detalhes-servico.component';
+import { ServicoModel } from './../../interfaces/users';
 @Component({
   selector: 'app-card-meus-servicos',
   templateUrl: './card-meus-servicos.component.html',
   styleUrls: ['./card-meus-servicos.component.scss'],
 })
-export class CardMeusServicosComponent {
+export class CardMeusServicosComponent implements OnInit {
   dataFromModal: any;
- 
+  user: Users;
+  servicos: ServicoModel[];
   constructor(
-    private modalController: ModalController
-  ) {}
+    private modalController: ModalController,
+    public auth: AuthService
+  ) { }
 
-  public servicos: Servico[] = [
-    {categoria: 'UX/UI', nome: 'interface UX/UI', contato: '99999999', descricao: 'interdaces de sites, e-commerce, landing page'},
-    {categoria: 'Desenvolvimento Web', nome: 'desenvolvimento web', contato: '99999999', descricao: 'desenvolvimento de sites, e-commerce, landing page'},
-    {categoria: 'Aulas Online', nome: 'Aula de inglês', contato: '99999999', descricao: 'aulas de conversação e gramática'},
-  ]
-  
-  async modalDetalhes(servico: Servico) {
+  async modalDetalhes(servico: ServicoModel) {
     const modal = await this.modalController.create({
       component: DetalhesServicoComponent,
-      componentProps: { 
-        website: 'edupala.com',
-        servico
+      componentProps: {
+        servico,
+        user: this.user
       },
       // cssClass: 'modal-meus-servicos-modal',
       backdropDismiss: false,
@@ -40,6 +31,21 @@ export class CardMeusServicosComponent {
 
     modal.present();
     this.dataFromModal = await modal.onWillDismiss();
+  }
+
+  ngOnInit(): void {
+    this.auth.getDados().subscribe(result => {
+      this.user = result[0];
+      if (this.user.servicos) {
+        this.servicos = this.user.servicos;
+      } else {
+        this.servicos = [
+          { categoria: 'UX/UI', nome: 'interface UX/UI', contato: '99999999', descricao: 'interdaces de sites, e-commerce, landing page' },
+          { categoria: 'Desenvolvimento Web', nome: 'desenvolvimento web', contato: '99999999', descricao: 'desenvolvimento de sites, e-commerce, landing page' },
+          { categoria: 'Aulas Online', nome: 'Aula de inglês', contato: '99999999', descricao: 'aulas de conversação e gramática' },
+        ]
+      }
+    })
   }
 
 }
