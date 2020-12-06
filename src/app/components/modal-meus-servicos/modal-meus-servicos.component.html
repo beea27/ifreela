@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-card>
+<div>
     <ion-card-title class="card-titulo">Adicione um Novo Serviço</ion-card-title>
     <form [formGroup]="cadastroServicoForm" (ngSubmit)="formSalvar()" class="form">
         <p>
@@ -22,6 +22,6 @@
         >Cadastrar Serviço</ion-button>
         </p>
     </form>
-  </ion-card>
+  </div>
 </ion-content>
 

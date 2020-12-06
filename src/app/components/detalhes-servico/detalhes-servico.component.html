@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <div>
     <ion-card-title class="card-titulo">Serviço</ion-card-title>
     <form [formGroup]="editaServicoForm" (ngSubmit)="formSalvar()" class="form">
       <ion-input [(ngModel)]="servico.categoria" formControlName="categoria" type='text' class='input'></ion-input>
@@ -16,6 +16,6 @@
     
       <ion-button (click)="closeModal()" type = "submit" class="btn">Salvar alterações</ion-button>
     </form>
-  </ion-card>
+  </div>
 </ion-content>
 
