@@ -39,6 +39,19 @@ export class AuthService {
     )
   }
 
+  getAll() {
+    return this.afs.collection<Users>('Users').snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+
+          return { id, ...data };
+        });
+      })
+    )
+  }
+
   signInWithEmail(credentials) {
     console.log('Sign in with email');
     return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,

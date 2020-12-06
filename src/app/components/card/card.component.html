@@ -1,71 +1,35 @@
-<ion-card>
-  <ion-item>
-    <ion-avatar>
-      <img src="https://randomuser.me/api/portraits/men/37.jpg">
-    </ion-avatar>
-    <ion-label>Mateus da Silva</ion-label>
-    <ion-col size="auto">
-      <ion-button fill="clear" (click)="likeChange.emit(!like)">
-        <ion-icon slot="icon-only" [name]="'heart'+(like ? '' : '-outline')"></ion-icon>
-      </ion-button>
-    </ion-col>
-  </ion-item>
-
-  <ion-card-content>
-    <ion-row>
-      <ion-col>
-        <p>
-          Eletricista
-        </p>
-      </ion-col>
+<ng-container *ngIf="servicos?.length > 0 else noData">
+  <ion-card *ngFor="let item of servicos">
+    <ion-item>
+      <ion-avatar>
+        <img src="https://randomuser.me/api/portraits/men/37.jpg">
+      </ion-avatar>
+      <ion-label>{{item.nomePrestador}}</ion-label>
       <ion-col size="auto">
-        <ion-button fill="outline" href="https://wa.me/WhatsAppNumber?text=Hello%20World"><ion-icon name="logo-whatsapp"></ion-icon></ion-button>
+        <ion-button fill="clear" (click)="favoritar(item)">
+          <ion-icon slot="icon-only" [name]="'heart'+(item.like ? '' : '-outline')"></ion-icon>
+        </ion-button>
       </ion-col>
-    </ion-row>  
-  </ion-card-content>
-</ion-card>
+    </ion-item>
 
-<ion-card>
-  <ion-item>
-    <ion-avatar>
-      <img src="https://randomuser.me/api/portraits/women/60.jpg">
-    </ion-avatar>
-    <ion-label>Luiza Fernandes</ion-label>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <p>
+            {{item.nome}}
+          </p>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button fill="outline" href="https://wa.me/WhatsAppNumber?text=Hello%20World">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+<ng-template #noData>
+  <ion-item lines="none">
+    <h3>Desculpe, não existem serviços registrados.</h3>
   </ion-item>
-
-  <ion-card-content>
-    <ion-row>
-      <ion-col>
-        <p>
-          Eletricista
-        </p>
-      </ion-col>
-      <ion-col size="auto">
-        <ion-button fill="outline" ><ion-icon name="logo-whatsapp"></ion-icon></ion-button>
-      </ion-col>
-    </ion-row>  
-  </ion-card-content>
-</ion-card>
-
-<ion-card>
-  <ion-item>
-    <ion-avatar>
-      <img src="https://randomuser.me/api/portraits/men/58.jpg">
-    </ion-avatar>
-    <ion-label>Felipe Cardoso</ion-label>
-  </ion-item>
-
-  <ion-card-content>
-    <ion-row>
-      <ion-col>
-        <p>
-          Eletricista
-        </p>
-      </ion-col>
-      <ion-col size="auto">
-        <ion-button fill="outline" ><ion-icon name="logo-whatsapp"></ion-icon></ion-button>
-      </ion-col>
-    </ion-row>  
-
-  </ion-card-content>
-</ion-card>
+</ng-template>
