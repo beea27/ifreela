@@ -15,6 +15,9 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {firebaseConfig} from './firebaseConfig';
 import {AngularFirestore} from '@angular/fire/firestore';
 
+import { BrMaskerModule, BrMaskDirective } from 'br-mask';
+
+
 
 
 @NgModule({
@@ -26,14 +29,16 @@ import {AngularFirestore} from '@angular/fire/firestore';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig.fire)
+    AngularFireModule.initializeApp(firebaseConfig.fire),
+    BrMaskerModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AngularFireAuth,
-    AngularFirestore
+    AngularFirestore,
+    BrMaskDirective
   ],
   bootstrap: [AppComponent]
 })

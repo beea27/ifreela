@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
+
 import { CadastroLoginPageRoutingModule } from './cadastro-login-routing.module';
 
 import { CadastroLoginPage } from './cadastro-login.page';
+import { BrMaskerModule, BrMaskDirective } from 'br-mask';
 
 @NgModule({
   imports: [
@@ -13,7 +15,8 @@ import { CadastroLoginPage } from './cadastro-login.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    CadastroLoginPageRoutingModule
+    CadastroLoginPageRoutingModule,
+    BrMaskerModule
   ],
   declarations: [CadastroLoginPage]
 })
