@@ -9,7 +9,7 @@ import { ModalController } from '@ionic/angular';
 export class ModalComponent implements OnInit {
 
   constructor(private modalController: ModalController) {}
-
+  like: any;
   ngOnInit() {
   }
 
