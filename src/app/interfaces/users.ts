@@ -12,4 +12,11 @@ export interface Users {
     bairro: string;
     numero: number;
     complemento: string
+    servicos: ServicoModel[];
+}
+export interface ServicoModel {
+    categoria: string;
+    nome: string;
+    contato: string;
+    descricao: string;
 }
