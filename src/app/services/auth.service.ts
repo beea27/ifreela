@@ -1,3 +1,4 @@
+import { Servico } from './../components/card-meus-servicos/card-meus-servicos.component';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -58,6 +59,12 @@ export class AuthService {
     } catch (error) {
       return console.error(error);
     }
+  }
+
+  updateUser(user: Users) {
+    this.afs.doc(`Users/${user.uid}`).update(user).then(result => {
+      return result;
+    })
   }
 
 
