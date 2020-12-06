@@ -1,11 +1,10 @@
-import { Servico } from './../components/card-meus-servicos/card-meus-servicos.component';
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
-import AuthProvider = firebase.auth.AuthProvider;
+import { map } from 'rxjs/operators';
 import { Users } from '../interfaces/users';
-import { map } from 'rxjs/operators'
+import AuthProvider = firebase.auth.AuthProvider;
 
 @Injectable({
   providedIn: 'root'
@@ -66,8 +65,6 @@ export class AuthService {
       return result;
     })
   }
-
-
 
   get authenticated(): boolean {
     return this.user !== null;
