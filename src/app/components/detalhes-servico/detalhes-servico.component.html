@@ -9,7 +9,7 @@
   <div>
     <ion-card-title class="card-titulo">Serviço</ion-card-title>
     <form [formGroup]="editaServicoForm" (ngSubmit)="formSalvar()" class="form">
-      <ion-input [(ngModel)]="servico.categoria" formControlName="categoria" type='text' class='input'></ion-input>
+      <ion-input [(ngModel)]="servico.categoria" formControlName="categoria" type='text' class='input' disabled></ion-input>
       <ion-input [(ngModel)]="servico.nome" formControlName="nome" type='text' class='input'></ion-input>
       <ion-input [(ngModel)]="servico.contato" formControlName="contato"type='tel' class='input'></ion-input>
       <ion-textarea [(ngModel)]="servico.descricao" formControlName="descricao" type='text' class='input' rows='20'></ion-textarea>
