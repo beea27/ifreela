@@ -16,13 +16,7 @@ export class CardComponent implements OnInit {
   @Input() servicos: ServicoModel[];
   constructor(public platform: Platform, private auth: AuthService) { }
 
-  chat() {
-    var whats;
-
-    this.platform.ready().then(() => {
-      whats.plugins.Whatsapp.send('+5511962700772');
-    });
-  }
+ 
 
   favoritar(servico: ServicoModel) {
     if (!this.user.favoritos) {
