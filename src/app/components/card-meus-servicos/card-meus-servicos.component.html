@@ -1,8 +1,5 @@
 <ion-card *ngFor="let s of servicos" (click)="modalDetalhes(s)" button>
   <ion-item>
-    <ion-avatar>
-      <img src="https://randomuser.me/api/portraits/women/2.jpg">
-    </ion-avatar>
     <ion-label class="nome-card">{{s.nome}}</ion-label>
     <ion-col size="auto">
       <ion-button fill="clear" (click)="deletar(s)">
