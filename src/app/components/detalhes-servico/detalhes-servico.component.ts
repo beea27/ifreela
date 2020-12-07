@@ -37,6 +37,7 @@ export class DetalhesServicoComponent implements OnInit {
     }
     //  this.router.navigateByUrl('/signup');
   }
+  
   ngOnInit() {
   }
 

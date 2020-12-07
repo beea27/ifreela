@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { Users } from 'src/app/interfaces/users';
 import { DetalhesServicoComponent } from '../../components/detalhes-servico/detalhes-servico.component';
 import { ServicoModel } from './../../interfaces/users';
+
 @Component({
   selector: 'app-card-meus-servicos',
   templateUrl: './card-meus-servicos.component.html',
@@ -20,7 +21,7 @@ export class CardMeusServicosComponent implements OnInit {
   // ]
   constructor(
     private modalController: ModalController,
-    public auth: AuthService
+    public auth: AuthService,
   ) { }
 
   async modalDetalhes(servico: ServicoModel) {
@@ -36,6 +37,14 @@ export class CardMeusServicosComponent implements OnInit {
 
     modal.present();
     this.dataFromModal = await modal.onWillDismiss();
+  }
+
+  deletar(servico: ServicoModel) {
+    const listaServicos = this.user.servicos;
+    this.servicos = listaServicos.filter(x => x.nome != servico.nome);
+    this.user.servicos = this.servicos;
+
+    this.auth.updateUser(this.user);
   }
 
   ngOnInit(): void {
